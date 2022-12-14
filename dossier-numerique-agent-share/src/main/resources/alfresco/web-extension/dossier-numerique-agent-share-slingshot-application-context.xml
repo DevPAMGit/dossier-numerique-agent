@@ -18,7 +18,7 @@
          class="org.springframework.extensions.surf.util.ResourceBundleBootstrapComponent">
       <property name="resourceBundles">
          <list>
-            <value>alfresco.web-extension.messages.dossier-numerique-agent-share</value>
+            <value>alfresco.web-extension.messages.agent59</value>
          </list>
       </property>
    </bean>

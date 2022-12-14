@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.alfresco.org/model/dictionary/1.0" name="agent59:agent">
+
+    <description>Modèles pour les agents du département du Nord</description>
+    <author>ANDRIANAIVO Michel</author>
+
+    <imports>
+        <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>
+        <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
+    </imports>
+
+    <namespaces>
+        <namespace uri="http://cd59.fr/model/agent/1.0." prefix="agent59"/>
+    </namespaces>
+
+    <aspects>
+        <aspect name="agent59:agentBase">
+
+            <title>Informations de base pour un agent du département du Nord</title>
+            <description>Informations de base pour un agent du département du Nord</description>
+
+            <properties>
+
+                <property name="agent59:matriculeAgent">
+                    <title>Matricule</title>
+                    <description>Le matricule de l'agent.</description>
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+
+            </properties>
+        </aspect>
+        <aspect name="agent59:agentIdentite">
+
+            <title>Informations sur l'identité de l'agent</title>
+            <description>Informations sur l'identité de l'agent</description>
+            <parent>agent59:agentBase</parent>
+
+            <properties>
+
+                <property name="agent59:nomAgent">
+                    <title>Nom</title>
+                    <description>Le nom de l'agent</description>
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+
+                <property name="agent59:prenomAgent">
+                    <title>Prénom</title>
+                    <description>Le prénom de l'agent</description>
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+
+                <property name="agent59:dateNaissanceAgent">
+                    <title>Date de naissance</title>
+                    <description>La date de naissance</description>
+                    <type>d:date</type>
+                    <mandatory>true</mandatory>
+                </property>
+
+            </properties>
+
+        </aspect>
+    </aspects>
+
+</model>
