@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.alfresco.org/model/dictionary/1.0" name="pleiades59:pleiades">
+
+    <description>Modèles pour les données issues de pléiades pour le département du Nord</description>
+    <author>ANDRIANAIVO Michel</author>
+
+    <imports>
+        <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>
+        <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
+    </imports>
+
+    <namespaces>
+        <namespace uri="http://cd59.fr/model/pleiades/1.0." prefix="pleiades"/>
+    </namespaces>
+
+    <aspects>
+        <aspect name="pleiades:donneesPleiades">
+            <title>Les données issues de pléiades</title>
+            <description>Les données issues de pléiades</description>
+
+            <properties>
+
+                <property name="pleiades:nomenclaturePleiades">
+                    <title>Le type de document nomenclature</title>
+                    <description>Le type de document nomenclature</description>
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+
+            </properties>
+
+            <mandatory-aspects>
+                <aspect>pleiades:codeGroupementPleiades</aspect>
+                <aspect>pleiades:codeFamillePleiades</aspect>
+                <aspect>pleiades:codeTypeDocumentPleiades</aspect>
+            </mandatory-aspects>
+
+        </aspect>
+        
+        <aspect name="pleiades:donneeTypee">
+            <title>Une donnée typée</title>
+            <description>Une donnée typée</description>
+
+            <properties>
+
+                <property name="pleiades:codePleiades">
+                    <title>Code</title>
+                    <description>Le code de la donnée</description>
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+
+                <property name="pleiades:libellePleiades">
+                    <title>Libellé</title>
+                    <description>Le libellé de la donnée</description>
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+
+            </properties>
+        </aspect>
+
+        <aspect name="pleiades:codeGroupementPleiades">
+            <title>Le code de groupement pleiades</title>
+            <description>Le code de groupement pleiades</description>
+            <mandatory-aspects>
+                <aspect>pleiades:donneeTypee</aspect>
+            </mandatory-aspects>
+        </aspect>
+
+        <aspect name="pleiades:codeFamillePleiades">
+            <title>Le code de famille pleiades</title>
+            <description>Le code de famille pleiades</description>
+            <mandatory-aspects>
+                <aspect>pleiades:donneeTypee</aspect>
+            </mandatory-aspects>
+        </aspect>
+
+        <aspect name="pleiades:codeTypeDocumentPleiades">
+            <title>Le code du type de document pleiades</title>
+            <description>Le code du type de document pleiades</description>
+            <mandatory-aspects>
+                <aspect>pleiades:donneeTypee</aspect>
+            </mandatory-aspects>
+        </aspect>
+
+
+    </aspects>
+
+</model>

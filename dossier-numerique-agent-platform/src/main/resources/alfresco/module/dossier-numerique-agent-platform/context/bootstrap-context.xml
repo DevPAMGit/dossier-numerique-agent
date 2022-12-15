@@ -18,6 +18,7 @@
             <list>
                 <!-- Bootstrap Resource Bundles for the content model types, aspects, properties etc -->
                 <value>alfresco/module/${project.artifactId}/messages/agent-model</value>
+                <value>alfresco/module/${project.artifactId}/messages/pleiades-model</value>
             </list>
         </property>
     </bean>
