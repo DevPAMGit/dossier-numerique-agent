@@ -19,7 +19,8 @@
     <config evaluator="string-compare" condition="DocumentLibrary">
         <aspects>
             <visible>
-                <aspect name="acme:securityClassified"/>
+                <!--aspect name="acme:securityClassified"/ -->
+                <aspect name="pleiades:donnees" />
             </visible>
             <addable> <!-- defaults to visible config -->
             </addable>
@@ -28,9 +29,9 @@
         </aspects>
         <types>
             <!-- Define the ACME base doc type as decedent from cm:content -->
-            <type name="cm:content">
+            <!--type name="cm:content" >
                 <subtype name="acme:document"/>
-            </type>
+            </type-->
         </types>
     </config>
 
@@ -40,19 +41,19 @@
       =============================================================================================================-->
 
     <config evaluator="string-compare" condition="AdvancedSearch" replace="true">
-        <advanced-search>
-            <forms>
+        <!--advanced-search>
+            <forms -->
                 <!-- Standard out-of-the-box types -->
-                <form labelId="search.form.label.cm_content" descriptionId="search.form.desc.cm_content">cm:content
+                <!-- form labelId="search.form.label.cm_content" descriptionId="search.form.desc.cm_content">cm:content
                 </form>
-                <form labelId="search.form.label.cm_folder" descriptionId="search.form.desc.cm_folder">cm:folder</form>
+                <form labelId="search.form.label.cm_folder" descriptionId="search.form.desc.cm_folder">cm:folder</form -->
 
                 <!-- Custom type -->
-                <form labelId="form.label.advancedsearch.acmeDocument"
+                <!--form labelId="form.label.advancedsearch.acmeDocument"
                       descriptionId="form.description.advancedsearch.acmeDocument">acme:document
                 </form>
             </forms>
-        </advanced-search>
+        </advanced-search -->
     </config>
 
     <!--================================================================================================================
@@ -67,13 +68,31 @@
 
         =============================================================================================================-->
 
+    <!-- DONNEES PLEIADES  ->
+    <config evaluator="aspect" condition="pleiades:donnees">
+
+        <!- FORMULAIRE - DONNEES PLEIADES ->
+        <forms>
+
+            <form>
+                <field-visibility>
+                    <s
+                </field-visibility>
+            </form>
+
+        </forms>
+        <!- FIN - FORMULAIRE - DONNEES PLEIADES ->
+
+    </config>
+    <!- FIN - DONNEES PLEIADES -->
+
     <!-- __________________________________ acme:document base type _________________________________________________-->
 
     <!-- View and Edit forms for acme:document -->
-    <config evaluator="node-type" condition="acme:document">
-        <forms>
+    <!-- config evaluator="node-type" condition="acme:document">
+        <forms -->
             <!-- Default form configuration for the cm:content type -->
-            <form>
+            <!-- form>
                 <field-visibility>
                     <show id="cm:name"/>
                     <show id="cm:title" force="true"/>
@@ -84,53 +103,53 @@
                     <show id="cm:creator" for-mode="view"/>
                     <show id="cm:created" for-mode="view"/>
                     <show id="cm:modifier" for-mode="view"/>
-                    <show id="cm:modified" for-mode="view"/>
+                    <show id="cm:modified" for-mode="view"/ -->
 
                     <!-- tags and categories -->
-                    <show id="cm:taggable" for-mode="edit" force="true"/>
-                    <show id="cm:categories"/>
+                    <!-- show id="cm:taggable" for-mode="edit" force="true"/>
+                    <show id="cm:categories"/ -->
 
                     <!-- cm:dublincore aspect -->
-                    <show id="cm:publisher"/>
+                    <!-- show id="cm:publisher"/>
                     <show id="cm:contributor"/>
                     <show id="cm:type"/>
                     <show id="cm:identifier"/>
                     <show id="cm:dcsource"/>
                     <show id="cm:coverage"/>
                     <show id="cm:rights"/>
-                    <show id="cm:subject"/>
+                    <show id="cm:subject"/ -->
 
                     <!-- cm:complianceable aspect -->
-                    <show id="cm:removeAfter"/>
+                    <!--show id="cm:removeAfter"/ -->
 
                     <!-- cm:effectivity aspect -->
-                    <show id="cm:from"/>
-                    <show id="cm:to"/>
+                    <!-- show id="cm:from"/>
+                    <show id="cm:to"/ -->
 
                     <!--  cm:summarizable aspect -->
-                    <show id="cm:summary"/>
+                    <!--show id="cm:summary"/ -->
 
                     <!-- cm:translatable aspect -->
-                    <show id="cm:translations"/>
+                    <!-- show id="cm:translations"/ -->
 
                     <!-- cm:localizable aspect -->
-                    <show id="cm:locale"/>
+                    <!-- show id="cm:locale"/ -->
 
                     <!-- cm:ownable aspect -->
-                    <show id="cm:owner"/>
+                    <!-- show id="cm:owner"/ -->
 
                     <!-- cm:attachable aspect -->
-                    <show id="cm:attachments"/>
+                    <!-- show id="cm:attachments"/ -->
 
                     <!-- cm:emailed aspect -->
-                    <show id="cm:originator"/>
+                    <!-- show id="cm:originator"/>
                     <show id="cm:addressee"/>
                     <show id="cm:addressees"/>
                     <show id="cm:sentdate"/>
-                    <show id="cm:subjectline"/>
+                    <show id="cm:subjectline"/ -->
 
                     <!-- exif:exif aspect -->
-                    <show id="exif:dateTimeOriginal"/>
+                    <!-- show id="exif:dateTimeOriginal"/>
                     <show id="exif:pixelXDimension"/>
                     <show id="exif:pixelYDimension"/>
                     <show id="exif:exposureTime"/>
@@ -144,10 +163,10 @@
                     <show id="exif:orientation"/>
                     <show id="exif:xResolution"/>
                     <show id="exif:yResolution"/>
-                    <show id="exif:resolutionUnit"/>
+                    <show id="exif:resolutionUnit"/ -->
 
                     <!-- audio:audio aspect -->
-                    <show id="audio:album"/>
+                    <!-- show id="audio:album"/>
                     <show id="audio:artist"/>
                     <show id="audio:composer"/>
                     <show id="audio:engineer"/>
@@ -157,23 +176,23 @@
                     <show id="audio:sampleRate"/>
                     <show id="audio:sampleType"/>
                     <show id="audio:channelType"/>
-                    <show id="audio:compressor"/>
+                    <show id="audio:compressor"/ -->
 
                     <!-- cm:indexControl aspect -->
-                    <show id="cm:isIndexed"/>
-                    <show id="cm:isContentIndexed"/>
+                    <!-- show id="cm:isIndexed"/>
+                    <show id="cm:isContentIndexed"/ -->
 
                     <!-- cm:geographic aspect -->
-                    <show id="cm:latitude"/>
-                    <show id="cm:longitude"/>
+                    <!-- show id="cm:latitude"/>
+                    <show id="cm:longitude"/ -->
 
                     <!-- surf:widget aspect -->
-                    <show id="surf:widgetType"/>
+                    <!-- show id="surf:widgetType"/>
                     <show id="surf:mid"/>
-                    <show id="surf:label"/>
+                    <show id="surf:label"/ -->
 
                     <!-- ACME custom props -->
-                    <show id="acme:documentId" force="true"/>
+                    <!-- show id="acme:documentId" force="true"/>
                     <show id="acme:securityClassification"/>
                 </field-visibility>
                 <appearance>
@@ -222,30 +241,30 @@
                     <field id="cm:addressee" read-only="true"/>
                     <field id="cm:addressees" read-only="true"/>
                     <field id="cm:sentdate" read-only="true"/>
-                    <field id="cm:subjectline" read-only="true"/>
+                    <field id="cm:subjectline" read-only="true"/ -->
 
                     <!-- ACME Props appearance -->
-                    <set id="acmeDocSet" appearance="bordered-panel" label-id="form.set.label.acme.document"/>
+                    <!--set id="acmeDocSet" appearance="bordered-panel" label-id="form.set.label.acme.document"/>
                     <field id="acme:documentId" label-id="form.field.label.acme.documentId" set="acmeDocSet">
                         <control template="/org/alfresco/components/form/controls/textfield.ftl"/>
                     </field>
                     <field id="acme:securityClassification" label-id="form.field.label.acme.securityClassification"
                            set="acmeDocSet"/>
                 </appearance>
-            </form>
+            </form -->
 
             <!-- Document Library pop-up Edit Metadata form -->
-            <form id="doclib-simple-metadata">
+            <!-- form id="doclib-simple-metadata">
                 <field-visibility>
                     <show id="cm:name"/>
                     <show id="cm:title" force="true"/>
-                    <show id="cm:description" force="true"/>
+                    <show id="cm:description" force="true"/ -->
                     <!-- tags and categories -->
-                    <show id="cm:taggable" for-mode="edit" force="true"/>
-                    <show id="cm:categories"/>
+                    <!-- show id="cm:taggable" for-mode="edit" force="true"/>
+                    <show id="cm:categories"/ -->
 
                     <!-- ACME custom props -->
-                    <show id="acme:documentId" force="true"/>
+                    <!-- show id="acme:documentId" force="true"/>
                     <show id="acme:securityClassification"/>
                 </field-visibility>
                 <edit-form template="../documentlibrary/forms/doclib-simple-metadata.ftl"/>
@@ -275,28 +294,28 @@
                         <control>
                             <control-param name="compactMode">true</control-param>
                         </control>
-                    </field>
+                    </field -->
 
                     <!-- ACME Props appearance -->
-                    <set id="acmeDocSet" appearance="bordered-panel" label-id="form.set.label.acme.document"/>
+                    <!-- set id="acmeDocSet" appearance="bordered-panel" label-id="form.set.label.acme.document"/>
                     <field id="acme:documentId" label-id="form.field.label.acme.documentId" set="acmeDocSet">
                         <control template="/org/alfresco/components/form/controls/textfield.ftl"/>
                     </field>
                     <field id="acme:securityClassification" label-id="form.field.label.acme.securityClassification"
                            set="acmeDocSet"/>
                 </appearance>
-            </form>
+            </form -->
 
             <!-- Document Library Inline Edit form -->
-            <form id="doclib-inline-edit">
+            <!-- form id="doclib-inline-edit">
                 <field-visibility>
                     <show id="cm:name"/>
                     <show id="cm:content" force="true"/>
                     <show id="cm:title" force="true"/>
-                    <show id="cm:description" force="true"/>
+                    <show id="cm:description" force="true"/ -->
 
                     <!-- ACME custom props -->
-                    <show id="acme:documentId" force="true"/>
+                    <!-- show id="acme:documentId" force="true"/>
                     <show id="acme:securityClassification"/>
                 </field-visibility>
                 <appearance>
@@ -313,10 +332,10 @@
                             <control-param name="editorAppearance">explorer</control-param>
                             <control-param name="forceEditor">true</control-param>
                         </control>
-                    </field>
+                    </field -->
 
                     <!-- ACME Props appearance -->
-                    <set id="acmeDocSet" appearance="bordered-panel" label-id="form.set.label.acme.document"/>
+                    <!-- set id="acmeDocSet" appearance="bordered-panel" label-id="form.set.label.acme.document"/>
                     <field id="acme:documentId" label-id="form.field.label.acme.documentId" set="acmeDocSet">
                         <control template="/org/alfresco/components/form/controls/textfield.ftl"/>
                     </field>
@@ -325,10 +344,10 @@
                 </appearance>
             </form>
         </forms>
-    </config>
+    </config -->
 
     <!-- Create and search forms for acme:document -->
-    <config evaluator="model-type" condition="acme:document">
+    <!-- config evaluator="model-type" condition="acme:document">
         <forms>
             <form>
                 <field-visibility>
@@ -337,10 +356,10 @@
                     <show id="cm:title" force="true"/>
                     <show id="cm:description" force="true"/>
                     <show id="mimetype"/>
-                    <show id="app:editInline" force="true"/>
+                    <show id="app:editInline" force="true"/ -->
 
                     <!-- ACME custom props -->
-                    <show id="acme:documentId" force="true"/>
+                    <!-- show id="acme:documentId" force="true"/>
                     <show id="acme:securityClassification"/>
                 </field-visibility>
                 <appearance>
@@ -366,29 +385,29 @@
                         <control template="/org/alfresco/components/form/controls/hidden.ftl">
                             <control-param name="contextProperty">editInline</control-param>
                         </control>
-                    </field>
+                    </field -->
 
                     <!-- ACME Props appearance -->
-                    <set id="acmeDocSet" appearance="bordered-panel" label-id="form.set.label.acme.document"/>
+                    <!-- set id="acmeDocSet" appearance="bordered-panel" label-id="form.set.label.acme.document"/>
                     <field id="acme:documentId" label-id="form.field.label.acme.documentId" set="acmeDocSet">
                         <control template="/org/alfresco/components/form/controls/textfield.ftl"/>
                     </field>
                     <field id="acme:securityClassification" label-id="form.field.label.acme.securityClassification"
                            set="acmeDocSet"/>
                 </appearance>
-            </form>
+            </form -->
             <!-- Search form -->
-            <form id="search">
+            <!-- form id="search">
                 <field-visibility>
                     <show id="cm:name"/>
                     <show id="cm:title" force="true"/>
                     <show id="cm:description" force="true"/>
                     <show id="mimetype"/>
                     <show id="cm:modified"/>
-                    <show id="cm:modifier"/>
+                    <show id="cm:modifier"/ -->
 
                     <!-- ACME custom props -->
-                    <show id="acme:documentId" force="true"/>
+                    <!-- show id="acme:documentId" force="true"/>
                     <show id="acme:securityClassification"/>
                 </field-visibility>
                 <appearance>
@@ -402,10 +421,10 @@
                     </field>
                     <field id="cm:modified">
                         <control template="/org/alfresco/components/form/controls/daterange.ftl"/>
-                    </field>
+                    </field -->
 
                     <!-- ACME Props appearance -->
-                    <set id="acmeDocSet" appearance="bordered-panel" label-id="form.set.label.acme.document"/>
+                    <!-- set id="acmeDocSet" appearance="bordered-panel" label-id="form.set.label.acme.document"/>
                     <field id="acme:documentId" label-id="form.field.label.acme.documentId" set="acmeDocSet">
                         <control template="/org/alfresco/components/form/controls/textfield.ftl"/>
                     </field>
@@ -414,7 +433,7 @@
                 </appearance>
             </form>
         </forms>
-    </config>
+    </config -->
 
 
 </alfresco-config>

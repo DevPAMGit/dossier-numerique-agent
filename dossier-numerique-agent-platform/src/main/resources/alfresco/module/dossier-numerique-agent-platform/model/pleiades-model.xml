@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="pleiades:contentModel" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+
+    <description>Modèle de contenu pour les données Pléïades</description>
+    <author>ANDRIANAIVO Michel</author>
+    <version>1.0</version>
+
+    <imports>
+        <!-- Import des définitions du dictionnaire d'Alfresco -->
+        <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
+        <!-- Import des définitions des modèles du domaine de contenu -->
+        <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>
+        <!-- Import des définitions des modèles du système -->
+        <import uri="http://www.alfresco.org/model/system/1.0" prefix="sys"/>
+    </imports>
+
+    <!-- L'espace de nom pour les modèles de contenus d'archives -->
+    <namespaces>
+        <namespace uri="http://www.acme.org/model/pleiades/1.0" prefix="pleiades"/>
+    </namespaces>
+
+    <!-- Types -->
+    <!-- Fin - Types -->
+
+    <!-- Aspects -->
+    <aspects>
+
+        <!-- Aspect des données de dépôt pléiades -->
+        <aspect name="pleiades:donnees">
+            <title>Pléiade</title>
+            <description>Données Pléiades du document</description>
+
+            <properties>
+
+                <!-- L'identifiant utilisateur -->
+                <property name="pleiades:userId">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+                <!-- Fin - L'identifiant utilisateur -->
+
+                <!-- Le matricule utilisateur -->
+                <property name="pleiades:agtMatricule">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+                <!-- Fin - Le matricule utilisateur -->
+
+                <!-- Le nom d'usage de l'agent -->
+                <property name="pleiades:agtNomUsage">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+                <!-- Fin - Le nom d'usage de l'agent -->
+
+                <!-- Le patronyme l'agent -->
+                <property name="pleiades:agtNomPatro">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+                <!-- Fin - Le patronyme l'agent -->
+
+                <!-- Le prénom d'usage de l'agent -->
+                <property name="pleiades:agtPrenom">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+                <!-- Fin - Le prénom d'usage de l'agent -->
+
+                <!-- La date de naissance de l'agent -->
+                <property name="pleiades:dateNaissAgt">
+                    <type>d:date</type>
+                    <mandatory>true</mandatory>
+                </property>
+                <!-- Fin - La date de naissance de l'agent -->
+
+                <!-- La date d'entrée de l'agent dans le département -->
+                <property name="pleiades:dateEntreeEJ">
+                    <type>d:date</type>
+                    <mandatory>true</mandatory>
+                </property>
+                <!-- Fin - La date d'entrée de l'agent dans le département -->
+
+                <!-- La fonction de l'agent au sein du département -->
+                <property name="pleiades:fonctionAgt">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+                <!-- Fin - La fonction de l'agent au sein du département -->
+
+                <!-- ??????? Date d'effet de l'arrêté ????? -->
+                <property name="pleiades:dateEffet">
+                    <type>d:date</type>
+                    <mandatory>false</mandatory>
+                </property>
+                <!-- Fin - ??????? Date d'effet de l'arrêté ????? -->
+
+                <!-- Date d'effet de numérisation du document -->
+                <property name="pleiades:dateNumerisation">
+                    <type>d:date</type>
+                    <mandatory>false</mandatory>
+                </property>
+                <!-- Fin - Date d'effet de numérisation du document -->
+
+                <!-- Le type du document -->
+                <property name="pleiades:typeDoc">
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                </property>
+                <!-- Fin - Le type du document -->
+
+                <!-- Indique si le document doit passer au contrôle de légalité  -->
+                <property name="pleiades:ctrlLegalite">
+                    <type>d:boolean</type>
+                    <mandatory>true</mandatory>
+                </property>
+                <!-- Fin - Indique si le document doit passer au contrôle de légalité -->
+
+                <!-- Indique si l'agent doit être notifié -->
+                <property name="pleiades:notifAgt">
+                    <type>d:boolean</type>
+                    <mandatory>true</mandatory>
+                </property>
+                <!-- Fin - Indique si l'agent doit être notifié -->
+
+                <!-- Indique Le type de signature -->
+                <property name="pleiades:typeValidation">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+                <!-- Fin - Indique si l'agent doit être notifié -->
+
+                <!-- Indique Le statut du document -->
+                <property name="pleiades:docStatut">
+                    <type>d:boolean</type>
+                    <mandatory>true</mandatory>
+                </property>
+                <!-- Fin - Indique Le statut du document -->
+
+                <!-- ?????????????? -->
+                <property name="pleiades:signcrit1">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+                <!-- Fin -  ??????????????  -->
+
+                <!-- ?????????????? -->
+                <property name="pleiades:signcrit2">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+                <!-- Fin -  ??????????????  -->
+
+                <!-- La pochette de destination -->
+                <property name="pleiades:pochetteNom">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                </property>
+                <!-- Fin - La pochette de destination -->
+
+            </properties>
+
+        </aspect>
+        <!-- Fin - Aspect des données de dépôt pléiades -->
+
+    </aspects>
+    <!-- Fin - Aspects -->
+</model>
