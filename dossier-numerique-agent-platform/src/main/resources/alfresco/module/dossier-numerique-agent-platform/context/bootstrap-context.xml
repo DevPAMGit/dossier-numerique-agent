@@ -32,6 +32,8 @@
                 <value>alfresco/module/${project.artifactId}/messages/content-model</value>
                 <!-- LABELS PERSONNALISE A SUPPRIMER -->
 
+                <value>alfresco/module/${project.artifactId}/messages/pleiades-model</value>
+
             </list>
 
         </property>
