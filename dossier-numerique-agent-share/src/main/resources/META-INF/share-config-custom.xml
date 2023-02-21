@@ -417,5 +417,69 @@
         </forms>
     </config>
 
+    <!-- Formulaire de consultation et edition pour les documents d'aspect pleiades:donnees -->
+    <config evaluator="aspect" condition="pleiades:donnees">
+        <forms>
+            <form>
+                <field-visibility>
+                    <show id="cm:name" for-mode="view" />
+                    <show id="cm:title" for-mode="view" />
+                    <show id="cm:description" for-mode="view" force="true" />
+
+                    <show id="pleiades:userId" />
+                    <show id="pleiades:agtMatricule"/>
+                    <show id="pleiades:agtNomUsage" />
+                    <show id="pleiades:agtNomPatro" />
+                    <show id="pleiades:agtPrenom" />
+                    <show id="pleiades:dateNaissAgt" />
+
+                    <show id="pleiades:dateEntreeEJ" />
+                    <show id="pleiades:fonctionAgt" />
+                    <show id="pleiades:dateEffet" />
+                    <show id="pleiades:dateNumerisation" />
+                    <show id="pleiades:typeDoc" />
+
+                    <show id="pleiades:ctrlLegalite" />
+                    <show id="pleiades:notifAgt" />
+                    <show id="pleiades:typeValidation" />
+                    <show id="pleiades:signcrit1" />
+                    <show id="pleiades:signcrit2" />
+
+                    <show id="pleiades:docStatut" />
+                    <show id="pleiades:pochetteNom" />
+                </field-visibility>
+                <appearance>
+                    <set id="setAgent" appearance="bordered-panel" label-id="form.set.pleiades.agent" />
+                    <set id="setAgentAugmente" appearance="bordered-panel" label-id="form.set.pleiades.agentAugmente" />
+                    <set id="document" appearance="bordered-panel" label-id="form.set.pleiades.document" />
+                    <set id="cheminement" appearance="bordered-panel" label-id="form.set.pleiades.cheminement" />
+
+                    <field id="pleiades:userId" label-id="form.field.label.pleiades.userId" set="setAgent" />
+                    <field id="pleiades:agtMatricule" label-id="form.field.label.pleiades.agtMatricule" set="setAgent" />
+                    <field id="pleiades:agtNomUsage" label-id="form.field.label.pleiades.agtNomUsage" set="setAgent" />
+                    <field id="pleiades:agtNomPatro" label-id="form.field.label.pleiades.agtNomPatro" set="setAgent" />
+                    <field id="pleiades:agtPrenom" label-id="form.field.label.pleiades.agtPrenom" set="setAgent" />
+                    <field id="pleiades:dateNaissAgt" label-id="form.field.label.pleiades.dateNaissAgt" set="setAgent" />
+
+                    <field id="pleiades:dateEntreeEJ" label-id="form.field.label.pleiades.dateNaissAgt" set="setAgentAugmente" />
+                    <field id="pleiades:fonctionAgt" label-id="form.field.label.pleiades.fonctionAgt" set="setAgentAugmente" />
+                    <field id="pleiades:dateEffet" label-id="form.field.label.pleiades.dateEffet" set="setAgentAugmente" />
+                    <field id="pleiades:dateNumerisation" label-id="form.field.label.pleiades.dateNumerisation" set="setAgentAugmente" />
+                    <field id="pleiades:typeDoc" label-id="form.field.label.pleiades.typeDoc" set="setAgentAugmente" />
+
+                    <field id="pleiades:ctrlLegalite" label-id="form.field.label.pleiades.ctrlLegalite" set="cheminement" />
+                    <field id="pleiades:notifAgt" label-id="form.field.label.pleiades.notifAgt" set="cheminement" />
+                    <field id="pleiades:typeValidation" label-id="form.field.label.pleiades.typeValidation" set="cheminement" />
+                    <field id="pleiades:signcrit1" label-id="form.field.label.pleiades.signcrit1" set="cheminement" />
+                    <field id="pleiades:signcrit2" label-id="form.field.label.pleiades.signcrit2" set="cheminement" />
+
+                    <field id="pleiades:docStatut" label-id="form.field.label.pleiades.docStatut" set="document" />
+                    <field id="pleiades:pochetteNom" label-id="form.field.label.pleiades.pochetteNom" set="document" />
+                </appearance>
+            </form>
+        </forms>
+
+    </config>
+    <!-- FIN - Formulaire de consultation et edition pour les documents d'aspect pleiades:donnees -->
 
 </alfresco-config>

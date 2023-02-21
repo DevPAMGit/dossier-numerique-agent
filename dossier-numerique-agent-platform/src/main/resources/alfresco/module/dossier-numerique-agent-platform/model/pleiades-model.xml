@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="pleiades:pleiades" xmlns="http://www.alfresco.org/model/dictionary/1.0">
 
+    <!-- Métadonnées optionnelles pour le modèle -->
     <description>Modèle de contenu pour les données Pléïades</description>
     <author>ANDRIANAIVO Michel</author>
     <version>1.0</version>
@@ -14,9 +15,9 @@
         <import uri="http://www.alfresco.org/model/system/1.0" prefix="sys"/>
     </imports>
 
-    <!-- L'espace de nom pour les modèles de contenus d'archives -->
+    <!-- L'espace de nom pour les modèles de contenus pléïades -->
     <namespaces>
-        <namespace uri="http://www.acme.org/model/pleiades/1.0" prefix="pleiades"/>
+        <namespace uri="http://www.cd59.fr/model/pleiades/1.0" prefix="pleiades"/>
     </namespaces>
 
     <!-- Types -->
@@ -27,7 +28,7 @@
 
         <!-- Aspect des données de dépôt pléiades -->
         <aspect name="pleiades:donnees">
-            <title>Pléiade</title>
+            <title>Pléiades</title>
             <description>Données Pléiades du document</description>
 
             <properties>
