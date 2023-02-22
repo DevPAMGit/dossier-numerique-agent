@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="rgpd:rgpd" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+
+    <description>Modèle de contenu pour des éléments du RGPD</description>
+    <author>ANDRIANAIVO Michel</author>
+    <version>1.0</version>
+
+    <imports>
+        <!-- Import des définitions du dictionnaire d'Alfresco -->
+        <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
+        <!-- Import des définitions des modèles du domaine de contenu -->
+        <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>
+        <!-- Import des définitions des modèles du système -->
+        <import uri="http://www.alfresco.org/model/system/1.0" prefix="sys"/>
+    </imports>
+
+    <!-- L'espace de nom pour les modèles de contenus d'archives -->
+    <namespaces>
+        <namespace uri="http://www.acme.org/model/rgpd/1.0" prefix="rgpd"/>
+    </namespaces>
+
+    <!-- Contraintes du modèle -->
+    <constraints>
+
+        <!-- Contrainte sur le sort final -->
+        <constraint name="rgpd:contrainteRGPD" type="LIST">
+            <parameter name="allowedValues">
+                <list>
+                    <!-- Empty for default search-->
+                    <value>Donnée à caractère personnel</value>
+                    <value>Donnée à caractère sensible</value>
+                    <value>Donnée à caractère hautement personnel</value>
+                </list>
+            </parameter>
+        </constraint>
+        <!-- Contrainte sur le sort final -->
+
+    </constraints>
+    <!-- Fin - Contraintes du modèle -->
+
+    <!-- Types -->
+    <!-- Fin - Types -->
+
+    <!-- Aspects -->
+    <aspects>
+
+        <!-- Aspect RGPD -->
+        <aspect name="rgpd:typeDonneeRgpd">
+            <title>RGPD Type de donnée</title>
+            <description>Le type de donnée RGPD</description>
+
+            <properties>
+
+                <!-- Le type de donnée RGPD. -->
+                <property name="rgpd:typeRgpd">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                    <constraints>
+                        <constraint ref="rgpd:contrainteRGPD"/>
+                    </constraints>
+                </property>
+                <!-- Fin - Le type de donnée RGPD -->
+
+            </properties>
+
+        </aspect>
+        <!-- Fin - Aspect RGPD -->
+
+    </aspects>
+    <!-- Fin - Aspects -->
+
+</model>

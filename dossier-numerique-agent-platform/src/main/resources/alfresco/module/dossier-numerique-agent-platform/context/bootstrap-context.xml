@@ -17,6 +17,7 @@
                 <value>alfresco/module/${project.artifactId}/model/content-model.xml</value>
                 <!-- FIN - MODELE PERSONNALISE A SUPPRIMER -->
                 <value>alfresco/module/${project.artifactId}/model/pleiades-model.xml</value>
+                <value>alfresco/module/${project.artifactId}/model/rgpd-model.xml</value>
                 <!-- Flux de travail personnalisés -->
                 <value>alfresco/module/${project.artifactId}/model/workflow-model.xml</value>
 
@@ -33,6 +34,7 @@
                 <!-- LABELS PERSONNALISE A SUPPRIMER -->
 
                 <value>alfresco/module/${project.artifactId}/messages/pleiades-model</value>
+                <value>alfresco/module/${project.artifactId}/messages/rgpd-model</value>
 
             </list>
 

@@ -21,6 +21,7 @@
             <visible>
                 <aspect name="acme:securityClassified"/>
                 <aspect name="pleiades:donnees"/>
+                <aspect name="rgpd:typeDonneeRgpd"/>
             </visible>
             <addable> <!-- defaults to visible config -->
             </addable>
@@ -480,6 +481,28 @@
         </forms>
 
     </config>
-    <!-- FIN - Formulaire de consultation et edition pour les documents d'aspect pleiades:donnees -->
+    <!-- Fin - Formulaire de consultation et edition pour les documents d'aspect pleiades:donnees -->
+
+    <!-- Formulaire de consultation et edition pour les documents d'aspect rgpd:rgpd -->
+    <config evaluator="aspect" condition="rgpd:rgpd">
+        <forms>
+            <form>
+                <field-visibility>
+                    <show id="cm:name" for-mode="view" />
+                    <show id="cm:title" for-mode="view" />
+                    <show id="cm:description" for-mode="view" force="true" />
+
+                    <show id="rgpd:typeRgpd" />
+
+                </field-visibility>
+                <appearance>
+                    <set id="setRgpd" appearance="bordered-panel" label-id="form.set.setRgpd.donnee" />
+                    <field id="rgpd:typeRgpd" label-id="form.field.label.rgpd.typeDonne" set="setRgpd" />
+                </appearance>
+            </form>
+        </forms>
+
+    </config>
+    <!-- Fin - Formulaire de consultation et edition pour les documents d'aspect rgpd:rgpd -->
 
 </alfresco-config>
