@@ -1,24 +1,24 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
    
    <!--
-    Define beans related to this Share extension here, such as
-     evaluators and resource bootstrapping.
+    Définissez ici les beans liés à cette extension Share, tels que les évaluateurs et amorçage des ressources.
 
-     Note. Any configuration related to the whole Share.war webapp
-           (i.e. not specific to this share extension) should be
-            placed in the alfresco-allinone/share/src/main/resources/alfresco/web-extension/custom-slingshot-application-context.xml file
+      Note. Toute configuration liée à l'ensemble de l'application Web Share.war
+            (c'est-à-dire non spécifique à cette extension de partage) doit être
+             placé dans le fichier :
+             alfresco-allinone/share/src/main/resources/alfresco/web-extension/custom-slingshot-application-context.xml
    -->
 
-   <!-- Add module specific messages and labels -->
+   <!-- Ajouts des messages et des étiquettes spécifiques au module -->
    <bean id="org.cd59.dna.dossier-numerique-agent-share.resources"
          class="org.springframework.extensions.surf.util.ResourceBundleBootstrapComponent">
       <property name="resourceBundles">
          <list>
             <value>alfresco.web-extension.messages.dossier-numerique-agent-share</value>
+            <value>alfresco.web-extension.messages.dna-stock-send-action-share</value>
          </list>
       </property>
    </bean>

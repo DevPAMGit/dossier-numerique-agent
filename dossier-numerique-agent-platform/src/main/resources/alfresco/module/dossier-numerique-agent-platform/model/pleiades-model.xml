@@ -113,42 +113,42 @@
                 <!-- Indique si le document doit passer au contrôle de légalité  -->
                 <property name="pleiades:ctrlLegalite">
                     <type>d:boolean</type>
-                    <mandatory>true</mandatory>
+                    <mandatory>false</mandatory>
                 </property>
                 <!-- Fin - Indique si le document doit passer au contrôle de légalité -->
 
                 <!-- Indique si l'agent doit être notifié -->
                 <property name="pleiades:notifAgt">
                     <type>d:boolean</type>
-                    <mandatory>true</mandatory>
+                    <mandatory>false</mandatory>
                 </property>
                 <!-- Fin - Indique si l'agent doit être notifié -->
 
                 <!-- Indique Le type de signature -->
                 <property name="pleiades:typeValidation">
                     <type>d:text</type>
-                    <mandatory>true</mandatory>
+                    <mandatory>false</mandatory>
                 </property>
                 <!-- Fin - Indique si l'agent doit être notifié -->
 
                 <!-- Indique Le statut du document -->
                 <property name="pleiades:docStatut">
-                    <type>d:boolean</type>
-                    <mandatory>true</mandatory>
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
                 </property>
                 <!-- Fin - Indique Le statut du document -->
 
                 <!-- ?????????????? -->
                 <property name="pleiades:signcrit1">
                     <type>d:text</type>
-                    <mandatory>true</mandatory>
+                    <mandatory>false</mandatory>
                 </property>
                 <!-- Fin -  ??????????????  -->
 
                 <!-- ?????????????? -->
                 <property name="pleiades:signcrit2">
                     <type>d:text</type>
-                    <mandatory>true</mandatory>
+                    <mandatory>false</mandatory>
                 </property>
                 <!-- Fin -  ??????????????  -->
 

@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.alfresco.org/model/dictionary/1.0" name="ModPId:Mod_RH_Pleiades">
+
+    <author>PHILIPPE LAROCHETTE</author>
+
+    <imports>
+        <import uri="http://www.alfresco.org/model/cmis/custom" prefix="cmiscustom"/>
+      <!-- Import des définitions du dictionnaire d'Alfresco -->
+      <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
+      <!-- Import des définitions des modèles du domaine de contenu -->
+      <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>
+      <!-- Import des définitions des modèles du système -->
+      <import uri="http://www.alfresco.org/model/system/1.0" prefix="sys"/>
+    </imports>
+
+    <namespaces>
+      <namespace uri="http://www.acme.org/model/Model_RH_Pleiades/1.0" prefix="ModPId"/>
+    </namespaces>
+
+    <types>
+        <type name="ModPId:Typ">
+            <title>Type de document Pleiades</title>
+            <parent>cmiscustom:document</parent>
+            <properties>
+                <property name="ModPId:agtNomPatro">
+                    <title>Nom patronymique de l'agent</title>
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                        <facetable>false</facetable>
+                    </index>
+                </property>
+                <property name="ModPId:agtPrenom">
+                    <title>Prénom de l'agent</title>
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                        <facetable>false</facetable>
+                    </index>
+                </property>
+                <property name="ModPId:heureNumerisation">
+                    <title>Heure de numérisation</title>
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                        <facetable>false</facetable>
+                    </index>
+                </property>
+                <property name="ModPId:moisPaie">
+                    <title>Mois de paie assoocié</title>
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                        <facetable>false</facetable>
+                    </index>
+                </property>
+                <property name="ModPId:dateEffet">
+                    <title>Date d'effet de l'acte</title>
+                    <type>d:date</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                    </index>
+                </property>
+                <property name="ModPId:typeValidation">
+                    <title>Type de validation</title>
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                        <facetable>false</facetable>
+                    </index>
+                </property>
+                <property name="ModPId:anneePaie">
+                    <title>Année de paie associée</title>
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                        <facetable>false</facetable>
+                    </index>
+                </property>
+                <property name="ModPId:signcrit1">
+                    <title>Critère n°1 de signature</title>
+                    <description>Pour l'aiguillage du document à signer</description>
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                        <facetable>false</facetable>
+                    </index>
+                </property>
+                <property name="ModPId:IDNumerisation">
+                    <title>Identifiant de numérisation</title>
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                        <facetable>false</facetable>
+                    </index>
+                    <constraints>
+                        <constraint name="ModPId:LENGTH_864278c8-b3ce-4e78-87b3-cda41bbe909f" type="LENGTH">
+                            <parameter name="maxLength">
+                                <value>60</value>
+                            </parameter>
+                            <parameter name="minLength">
+                                <value>1</value>
+                            </parameter>
+                        </constraint>
+                    </constraints>
+                </property>
+                <property name="ModPId:dateDepot">
+                    <title>Date de dépôt</title>
+                    <type>d:date</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                    </index>
+                </property>
+                <property name="ModPId:docStatut">
+                    <title>Statut du document</title>
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                        <facetable>false</facetable>
+                    </index>
+                </property>
+                <property name="ModPId:agtNomUsage">
+                    <title>Nom d'usage de l'agent</title>
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                        <facetable>false</facetable>
+                    </index>
+                </property>
+                <property name="ModPId:agtMatricule">
+                    <title>Matricule de l'agent</title>
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                        <facetable>false</facetable>
+                    </index>
+                </property>
+                <property name="ModPId:ctrlLegalite">
+                    <title>Contrôle de légalité</title>
+                    <type>d:boolean</type>
+                    <mandatory>false</mandatory>
+                    <default>false</default>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                    </index>
+                </property>
+                <property name="ModPId:dateCFN">
+                    <title>Date de fin de fonction</title>
+                    <type>d:date</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                    </index>
+                </property>
+                <property name="ModPId:signcrit2">
+                    <title>Critère de signature n°2</title>
+                    <description>Pour l'aiguillage du document à signer</description>
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                        <facetable>false</facetable>
+                    </index>
+                </property>
+                <property name="ModPId:pochetteNom">
+                    <title>Pochette de rangement</title>
+                    <description>Pochette de rangement du document</description>
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                        <facetable>false</facetable>
+                    </index>
+                </property>
+                <property name="ModPId:dateNumerisation">
+                    <title>Date de numérisation</title>
+                    <type>d:date</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                    </index>
+                </property>
+                <property name="ModPId:notifAgt">
+                    <title>Notification à l'agent</title>
+                    <type>d:boolean</type>
+                    <mandatory>false</mandatory>
+                    <default>false</default>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                    </index>
+                </property>
+                <property name="ModPId:dateNaissAgt">
+                    <title>Date de naissance de l'agent</title>
+                    <type>d:date</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                    </index>
+                </property>
+                <property name="ModPId:dateStatut">
+                    <title>Date du statut du document</title>
+                    <type>d:date</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                    </index>
+                </property>
+                <property name="ModPId:typeDoc">
+                    <title>Type de document</title>
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                        <facetable>false</facetable>
+                    </index>
+                </property>
+                <property name="ModPId:dateEntreeEJ">
+                    <title>Date d'entrée de l'agent</title>
+                    <type>d:date</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                    </index>
+                </property>
+                <property name="ModPId:userId">
+                    <title>Gestionnaire</title>
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                        <facetable>false</facetable>
+                    </index>
+                </property>
+                <property name="ModPId:fonctionAgt">
+                    <title>Fonction de l'agent</title>
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                        <facetable>false</facetable>
+                    </index>
+                </property>
+            </properties>
+            <associations/>
+        </type>
+        <type name="ModPId:Dossier">
+            <title>Dossier Agent</title>
+            <parent>cmiscustom:folder</parent>
+            <properties>
+                <property name="ModPId:dateNaissAgtDossier">
+                    <title>Date de naissance de l'agent</title>
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                        <facetable>false</facetable>
+                    </index>
+                </property>
+                <property name="ModPId:agtMatriculeDossier">
+                    <title>Matricule de l'agent</title>
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                        <facetable>false</facetable>
+                    </index>
+                </property>
+                <property name="ModPId:agtNomUsageDossier">
+                    <title>Nom d'usage de l'agent</title>
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                        <facetable>false</facetable>
+                    </index>
+                </property>
+                <property name="ModPId:fonctionAgtDossier">
+                    <title>Fonction de l'agent</title>
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                        <facetable>false</facetable>
+                    </index>
+                </property>
+                <property name="ModPId:userIdDossier">
+                    <title>Gestionnaire</title>
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                        <facetable>false</facetable>
+                    </index>
+                </property>
+                <property name="ModPId:dateCFNDossier">
+                    <title>Date de fin de fonction</title>
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                        <facetable>false</facetable>
+                    </index>
+                </property>
+                <property name="ModPId:agtNomPatroDossier">
+                    <title>Nom patronymique de l'agent</title>
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                        <facetable>false</facetable>
+                    </index>
+                </property>
+                <property name="ModPId:dateEntreeEJDossier">
+                    <title>Date d'entrée de l'agent</title>
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                        <facetable>false</facetable>
+                    </index>
+                </property>
+                <property name="ModPId:agtPrenomDossier">
+                    <title>Prénom de l'agent</title>
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                    <index enabled="true">
+                        <tokenised>true</tokenised>
+                        <facetable>false</facetable>
+                    </index>
+                </property>
+            </properties>
+            <associations/>
+        </type>
+    </types>
+</model>

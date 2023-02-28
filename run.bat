@@ -82,6 +82,7 @@ EXIT /B %ERRORLEVEL%
     docker volume create dossier-numerique-agent-acs-volume
     docker volume create dossier-numerique-agent-db-volume
     docker volume create dossier-numerique-agent-ass-volume
+    docker volume create dossier-numerique-agent-db-data-volume
     docker-compose -f "%COMPOSE_FILE_PATH%" up --build -d
 EXIT /B 0
 :start_share
@@ -124,4 +125,5 @@ EXIT /B 0
     docker volume rm -f dossier-numerique-agent-acs-volume
     docker volume rm -f dossier-numerique-agent-db-volume
     docker volume rm -f dossier-numerique-agent-ass-volume
+    docker volume rm -f dossier-numerique-agent-db-data-volume
 EXIT /B 0

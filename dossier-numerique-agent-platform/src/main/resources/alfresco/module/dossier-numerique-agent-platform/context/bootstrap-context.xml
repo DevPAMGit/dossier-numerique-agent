@@ -16,10 +16,11 @@
                 <!-- MODELE PERSONNALISE A SUPPRIMER -->
                 <value>alfresco/module/${project.artifactId}/model/content-model.xml</value>
                 <!-- FIN - MODELE PERSONNALISE A SUPPRIMER -->
-                <value>alfresco/module/${project.artifactId}/model/pleiades-model.xml</value>
-                <value>alfresco/module/${project.artifactId}/model/rgpd-model.xml</value>
+                <!--value>alfresco/module/${project.artifactId}/model/pleiades-model.xml</value>
+                <value>alfresco/module/${project.artifactId}/model/rgpd-model.xml</value-->
+              <value>alfresco/module/${project.artifactId}/model/Mod_RH_Pleiades.xml</value>
                 <!-- Flux de travail personnalisés -->
-                <value>alfresco/module/${project.artifactId}/model/workflow-model.xml</value>
+                <!--value>alfresco/module/${project.artifactId}/model/workflow-model.xml</value-->
 
             </list>
         </property>
@@ -33,8 +34,11 @@
                 <value>alfresco/module/${project.artifactId}/messages/content-model</value>
                 <!-- LABELS PERSONNALISE A SUPPRIMER -->
 
-                <value>alfresco/module/${project.artifactId}/messages/pleiades-model</value>
+              <!--value>alfresco/module/${project.artifactId}/messages/Mod_RH_Pleiades</value-->
+
+                <!--value>alfresco/module/${project.artifactId}/messages/pleiades-model</value>
                 <value>alfresco/module/${project.artifactId}/messages/rgpd-model</value>
+                <value>alfresco/module/${project.artifactId}/messages/dna-action</value -->
 
             </list>
 

@@ -9,6 +9,8 @@ services:
       CATALINA_OPTS: "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=0.0.0.0:8888"
       REPO_HOST: dossier-numerique-agent-acs
       REPO_PORT: 8080
+      TZ: "Europe/Paris"
+      JAVA_OPTS: " -Duser.language=fr -Duser.country=FR"
     ports:
       - "${share.port}:8080"
       - "${share.debug.port}:8888"
@@ -20,6 +22,8 @@ services:
     environment:
       JAVA_TOOL_OPTIONS: "${keystore.settings}"
       CATALINA_OPTS: "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=0.0.0.0:8888"
+      TZ: "Europe/Paris"
+      JAVA_OPTS: " -Duser.language=fr -Duser.country=FR -Djavax.net.debug=ssl"
     ports:
       - "${acs.port}:8080"
       - "${acs.debug.port}:8888"
@@ -38,6 +42,18 @@ services:
       - "${postgres.port}:5432"
     volumes:
       - dossier-numerique-agent-db-volume:/var/lib/postgresql/data
+#  dossier-numerique-agent-db:
+#    image: postgres:13
+#    environment:
+#      POSTGRES_DB: dna
+#      POSTGRES_USER: dna
+#      POSTGRES_PASSWORD: dna
+#    command: postgres -c max_connections=300 -c log_min_messages=LOG
+#    ports:
+#      - "5455:5432"
+#    volumes:
+#      - ./init_db.sql:/docker-entrypoint-initdb.d/create_tables.sql
+#      - dossier-numerique-agent-db-data-volume:/var/lib/postgresql13/data
   dossier-numerique-agent-ass:
     image: alfresco/alfresco-search-services:1.2.0
     environment:
@@ -46,6 +62,8 @@ services:
       SOLR_SOLR_HOST: dossier-numerique-agent-ass
       SOLR_SOLR_PORT: 8983
       SOLR_CREATE_ALFRESCO_DEFAULTS: alfresco,archive
+      TZ: "Europe/Paris"
+      JAVA_OPTS: " -Duser.language=fr -Duser.country=FR"
     ports:
       - "8983:8983"
     volumes:
@@ -58,3 +76,5 @@ volumes:
     external: true
   dossier-numerique-agent-ass-volume:
     external: true
+#  dossier-numerique-agent-db-data-volume:
+#    external: true
