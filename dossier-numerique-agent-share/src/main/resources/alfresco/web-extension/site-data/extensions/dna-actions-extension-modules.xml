@@ -22,7 +22,6 @@
                         </action>
                     </actions>
 
-
                     <actionGroups>
                         <actionGroup id="document-browse">
                             <action index="500" id="stock-send-action" />

@@ -9,6 +9,7 @@ import org.alfresco.service.cmr.model.FileFolderService;
 
 import org.alfresco.service.cmr.repository.NodeRef;
 import org.alfresco.service.cmr.repository.NodeService;
+import org.cd59.exception.MetierException;
 import org.json.JSONObject;
 
 import org.cd59.dna.model.pleiades.ModRHPleiadesTyp;
@@ -23,7 +24,10 @@ import java.util.HashMap;
  */
 public class StockAndSendAction {
 
-    private static Logger LOGGER = LoggerFactory.getLogger(StockAndSendAction.class);
+    /**
+     * Le logger de l'action.
+     */
+    private static final Logger LOGGER = LoggerFactory.getLogger(StockAndSendAction.class);
 
     /**
      * Le service de gestion de nœuds.
@@ -54,22 +58,16 @@ public class StockAndSendAction {
      * Execute l'action.
      * @param nodeRef Le nœud de référence de l'action.
      */
-    public void executer(NodeRef nodeRef) throws IOException, RequeteHTTPException, InterruptedException {
+    public void executer(NodeRef nodeRef) throws IOException, RequeteHTTPException, InterruptedException, MetierException {
         // Vérification des préconditions
-        if (nodeRef == null) {
-            LOGGER.info("noeud null");
-            return;
-        }
-        else if (!this.nodeService.getType(nodeRef).equals(ModRHPleiadesTyp.NOM)) {
-            LOGGER.info("noeud pas du bon type");
-            return;
-        }
+        if (nodeRef == null)
+            throw new MetierException("Le noeud de référence est null.");
 
-        LOGGER.info("Traitement");
+        else if (!this.nodeService.getType(nodeRef).equals(ModRHPleiadesTyp.NOM))
+            throw new MetierException("Le noeud de référence n'a pas la bonne typologie.");
 
         PastellApiV2 pastell = new PastellApiV2("https://pastell-tst.intranet.cg59.fr", "admin","admin");
         JSONObject document = pastell.creerDocument("30", "dna-document-agent");
-        LOGGER.info("Création du document OK");
 
         // Récupération des données à fournir à Pastell.
         HashMap<String, String> donnees = new HashMap<>(){{
@@ -81,16 +79,17 @@ public class StockAndSendAction {
             put("iparapheur_type", "Type_DNA");
             put("iparapheur_sous_type", "SS_Type_UTRH_Cambrai_simple");
         }};
+
         // Mise à jour des données du dossier Pastell.
         pastell.modifierDocument("30", document.getString("id_d"), donnees);
-        LOGGER.info("Modification du document OK");
+
         // Ajout du fichier.
         pastell.ajouterFichierDocument("30", document.getString("id_d"), "fichier_a_signer",
-                "a_signer", this.fileFolderService.getReader(nodeRef).getContentInputStream().readAllBytes());
-        LOGGER.info("Ajout du fichier OK");
+                "a_signer.pdf", this.fileFolderService.getReader(nodeRef).getContentInputStream().readAllBytes());
 
         // Verrouillage du document.
         this.lockService.lock(nodeRef, LockType.valueOf("READ_ONLY_LOCK"));
+
         // Envoie du document.
         pastell.actionDocument("30", document.getString("id_d"), "orientation");
     }
